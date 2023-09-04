@@ -31,6 +31,7 @@
 Temp/
 Library/
 *.log
+*.meta
 
 # ===================================== #
 # Visual Studio / MonoDevelop generated #
