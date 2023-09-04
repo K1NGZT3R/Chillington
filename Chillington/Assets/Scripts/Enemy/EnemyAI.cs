@@ -69,6 +69,8 @@ public class EnemyAI : MonoBehaviour
             walkPointSet = false;
         Debug.Log("Patrolling");
     }
+
+
     private void SearchWalkPoint()
     {
         //Calculate random point in range
@@ -87,7 +89,6 @@ public class EnemyAI : MonoBehaviour
         Debug.Log("Enemy: Chasing");
     }
 
-    //Google how to clamp navmesh agent movement speed
 
     private void AttackPlayer()
     {

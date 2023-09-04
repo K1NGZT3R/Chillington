@@ -11,9 +11,9 @@ TagManager:
   - Hittable
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Obstruction
+  - Target
+  - ground
   - 
   - 
   - 
