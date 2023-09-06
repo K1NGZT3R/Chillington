@@ -6,10 +6,10 @@ public class Aim : MonoBehaviour
 {
     private bool isAiming = false;
 
-    public Vector3 hipPos;
-    public Vector3 zoomPos;
-
     public GameObject cam;
+    public Camera cunt;
+
+    public float defaultFOV = 60;
 
 
     // Start is called before the first frame update
@@ -32,13 +32,24 @@ public class Aim : MonoBehaviour
 
         if (isAiming == false)
         {
-            cam.transform.localPosition = Vector3.MoveTowards(transform.localPosition, hipPos, 10 * Time.deltaTime);
+            //cam.transform.localPosition = Vector3.MoveTowards(transform.localPosition, hipPos, 10 * Time.deltaTime);
+            cunt.fieldOfView = defaultFOV += 120 * Time.deltaTime;
         }
+
+        //Capping FOV
+        if (defaultFOV <= 40)
+            defaultFOV = 40;
+
+        if (defaultFOV >= 60)
+            defaultFOV = 60;
     }
 
     private void AimDownSight()
     {
-        cam.transform.localPosition = Vector3.MoveTowards(transform.localPosition, zoomPos, 10 * Time.deltaTime);
+        //cam.transform.localPosition = Vector3.MoveTowards(transform.localPosition, zoomPos, 10 * Time.deltaTime);
+        cunt.fieldOfView = defaultFOV -= 120 * Time.deltaTime;
         isAiming = true;
     }
+
+
 }
