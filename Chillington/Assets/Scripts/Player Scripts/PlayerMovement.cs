@@ -42,6 +42,14 @@ public class PlayerMovement : MonoBehaviour
 
         controller.Move(velocity * Time.deltaTime);
 
-        //test
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            speed = 17f;
+        }
+
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            speed = 12f;
+        }
     }
 }
