@@ -17,6 +17,14 @@ public class GameManager : MonoBehaviour
     public int enemyCount = 4;
     public static List<Object> enemyList = new List<Object>();
 
+    [Header("Crafting")]
+    public int wood;
+    public int metal;
+    public int stone;
+
+    public int carBattery;
+
+
     public bool inEnemyFOV;
 
     public static GameManager instance;
