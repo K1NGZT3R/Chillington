@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     [Header("HUD")]
     public GameObject HUD;
     public TextMeshProUGUI enemyCounter;
+    public GameObject crafting;
+    //work pls
 
     public EnemyAI EnemyAI;
     public GameObject enemies;
@@ -17,17 +19,12 @@ public class GameManager : MonoBehaviour
     public int enemyCount = 4;
     public static List<Object> enemyList = new List<Object>();
 
-    [Header("Crafting")]
-    public int wood;
-    public int metal;
-    public int stone;
-
-    public int carBattery;
-
-
     public bool inEnemyFOV;
 
     public static GameManager instance;
+
+
+
 
     private void Awake()
     {
@@ -41,6 +38,8 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKey)
+
         if (EnemyAI.deadMan == true)
         {
             SceneManager.LoadScene("Menu");
@@ -68,4 +67,9 @@ public class GameManager : MonoBehaviour
     {
         enemyCounter.SetText("Enemies: " + enemyList.Count);
     }
+
+
+
+
+
 }
