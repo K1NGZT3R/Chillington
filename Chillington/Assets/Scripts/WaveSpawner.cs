@@ -14,13 +14,13 @@ public class WaveSpawner : MonoBehaviour
     private float waveTimer;
     public float spawnInterval;
     public float spawnTimer;
-    // Start is called before the first frame update
+   
     void Start()
     {
         GenerateWave();
     }
 
-    // Update is called once per frame
+   
     void FixedUpdate()
     {
         if(spawnTimer <= 0)
