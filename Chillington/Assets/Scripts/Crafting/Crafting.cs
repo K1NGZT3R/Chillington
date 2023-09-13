@@ -11,4 +11,22 @@ public class Crafting : MonoBehaviour
 
     public int carBattery;
 
+    [Header("Items")]
+    //Tools
+    public int hammer;
+    public int machete;
+
+    //Other
+    public int landmine;
+    public int electricFence;
+
+
+
+    public void CraftHammer()
+    {
+        if (wood == 2 && stone == 1)
+        {
+
+        }
+    }
 }
