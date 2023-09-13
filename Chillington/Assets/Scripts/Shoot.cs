@@ -11,6 +11,9 @@ public class Shoot : MonoBehaviour
     [SerializeField] LayerMask hittableLayer;
     [SerializeField] float weaponRange;
 
+    [SerializeField] float shootDelay = 1f;
+    float T_ShootDelay;
+
     Camera mainCam;
 
     void Awake()
@@ -20,17 +23,24 @@ public class Shoot : MonoBehaviour
         bangbang.SetActive(false);
     }
 
+    void Start()
+    {
+        T_ShootDelay = shootDelay;
+    }
+
     void Update()
     {
-        if (Input.GetMouseButton(0))
+        if (T_ShootDelay < shootDelay)
         {
-            HandleRaycast();
-            bangbang.SetActive(true);
+            T_ShootDelay += Time.deltaTime;
         }
-        else
+
+        if (T_ShootDelay >= shootDelay)
         {
-            bangbang.SetActive(false);
+            T_ShootDelay = 0;
+            Shoots();
         }
+
     }
 
     private void HandleRaycast()
@@ -42,6 +52,20 @@ public class Shoot : MonoBehaviour
         else
         {
             Debug.Log("Not hitting a wall");
+        }
+    }
+
+    private void Shoots()
+    {
+        if (Input.GetMouseButton(0))
+        {
+            HandleRaycast();
+            bangbang.SetActive(true);
+
+        }
+        else
+        {
+            bangbang.SetActive(false);
         }
     }
 
