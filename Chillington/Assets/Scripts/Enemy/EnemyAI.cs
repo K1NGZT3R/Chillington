@@ -15,8 +15,6 @@ public class EnemyAI : MonoBehaviour
     public float health;
 
     [Header("References")]
-    public FieldOfView fov;
-
     //Patroling
     public Vector3 walkPoint;
     bool walkPointSet;
@@ -46,8 +44,8 @@ public class EnemyAI : MonoBehaviour
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
 
         if (!playerInSightRange && !playerInAttackRange) Patroling();
-        if (playerInSightRange && !playerInAttackRange && fov.canSeePlayer) ChasePlayer();
-        if (playerInAttackRange && playerInSightRange && fov.canSeePlayer) AttackPlayer();
+        if (playerInSightRange && !playerInAttackRange) ChasePlayer();
+        if (playerInAttackRange && playerInSightRange) AttackPlayer();
 
         if (Input.GetKeyDown(KeyCode.E))
         {
