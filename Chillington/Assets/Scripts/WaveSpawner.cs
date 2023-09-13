@@ -75,4 +75,10 @@ public class WaveSpawner : MonoBehaviour
         public GameObject enemyPrefab;
         public int cost;
     }
+
+    [System.Serializable]
+    public class SpawnLocations
+    {
+        public Transform SpawnTransform;
+    }
 }
