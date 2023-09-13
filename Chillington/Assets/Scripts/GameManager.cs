@@ -9,67 +9,58 @@ public class GameManager : MonoBehaviour
 {
     [Header("HUD")]
     public GameObject HUD;
-    public TextMeshProUGUI enemyCounter;
     public GameObject crafting;
     //work pls
 
-    public EnemyAI EnemyAI;
-    public GameObject enemies;
-    public FieldOfView fov;
-    public int enemyCount = 4;
-    public static List<Object> enemyList = new List<Object>();
-
-    public bool inEnemyFOV;
+    [Header("Scripts")]
+    public MouseLook ml;
 
     public static GameManager instance;
 
-
-
-
-    private void Awake()
-    {
-        instance = this;
-    }
-
     void Start()
     {
-        EnemyAI.deadMan = false;
+        crafting.SetActive(false);
     }
 
     void Update()
     {
-        if (Input.GetKey)
-
-        if (EnemyAI.deadMan == true)
+        /*Enable and disble crafting UI
+        if (Input.GetKeyUp(KeyCode.Tab) && !crafting.activeSelf)
         {
-            SceneManager.LoadScene("Menu");
+            crafting.SetActive(true);
+            Debug.Log("Active");
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
+            
 
-        ChangeText();
+        if (Input.GetKeyDown(KeyCode.Tab) && crafting.activeSelf)
+        {
+            crafting.SetActive(false);
+            Debug.Log("Inactive");
+        } */
+
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            if (!crafting.activeSelf)
+            {
+                crafting.SetActive(true);
+                Debug.Log("Active");
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+
+                ml.enabled = false;
+            }
+            else
+            {
+                crafting.SetActive(false);
+                Debug.Log("Inactive");
+                Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
+
+                ml.enabled = true;
+            }
+        }
+            
     }
-
-    public void EnemySpawned(GameObject enemy)
-    {
-        enemyList.Add(enemy);
-    }
-
-    public void EnemyDestroyed(GameObject enemy)
-    {
-        enemyList.Remove(enemy);
-    }
-
-    public void PlayerCaught()
-    {
-        SceneManager.LoadScene("Menu");
-    }
-
-    public void ChangeText()
-    {
-        enemyCounter.SetText("Enemies: " + enemyList.Count);
-    }
-
-
-
-
-
 }
