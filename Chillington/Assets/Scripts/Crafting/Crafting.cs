@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class Crafting : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [Header("Resources")]
+    public int wood;
+    public int metal;
+    public int stone;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public int carBattery;
+
 }
