@@ -141,7 +141,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &23417030
 RectTransform:
   m_ObjectHideFlags: 0
@@ -218,6 +218,10 @@ MonoBehaviour:
   metal: 0
   stone: 0
   carBattery: 0
+  hammer: 0
+  machete: 0
+  landmine: 0
+  electricFence: 0
 --- !u!1001 &25946775
 PrefabInstance:
   m_ObjectHideFlags: 0
