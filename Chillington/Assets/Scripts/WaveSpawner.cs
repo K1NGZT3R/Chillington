@@ -5,6 +5,7 @@ using UnityEngine;
 public class WaveSpawner : MonoBehaviour
 {
     public List<Enemy> enemies = new List<Enemy>();
+    public List<SpawnLocations> spawnLocations = new();
     public int currWave;
     public int waveValue;
     public List<GameObject> enemiesToSpawn = new List<GameObject>();
@@ -15,7 +16,7 @@ public class WaveSpawner : MonoBehaviour
     public float spawnInterval;
     public float spawnTimer;
    
-    void Start()
+    void Start() //change to on awake so you can wake up the script and do it all again if enemies to spawn is nothing than kill script and plus one to wave?
     {
         GenerateWave();
     }
@@ -27,6 +28,7 @@ public class WaveSpawner : MonoBehaviour
         {
             if(enemiesToSpawn.Count > 0)
             {
+                spawnLocation = spawnLocations[Random.Range(0, spawnLocations.Count)].SpawnTransform;
                 Instantiate(enemiesToSpawn[0], spawnLocation.position, Quaternion.identity);
                 enemiesToSpawn.RemoveAt(0);
                 spawnTimer = spawnInterval;
@@ -37,13 +39,15 @@ public class WaveSpawner : MonoBehaviour
             spawnTimer -= Time.fixedDeltaTime;
             waveTimer -= Time.fixedDeltaTime;
         }
+
+
     }
 
     public void GenerateWave()
     {
         waveValue = currWave * 10;
         GenerateEnemies();
-
+        
         spawnInterval = waveDuration / enemiesToSpawn.Count;  // gives a fixed time between each enemy spawn
         waveTimer = waveDuration;
     }
