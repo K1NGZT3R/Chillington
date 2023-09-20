@@ -14,11 +14,11 @@ TagManager:
   - Obstruction
   - Player
   - ground
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Pickupable
+  - Stone
+  - Wood
+  - Metal
+  - CarBattery
   - 
   - 
   - 
