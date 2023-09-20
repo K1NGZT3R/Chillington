@@ -11,8 +11,9 @@ public class Shoot : MonoBehaviour
     [SerializeField] LayerMask hittableLayer;
     [SerializeField] float weaponRange;
 
-    [SerializeField] float shootDelay = 1f;
-    float T_ShootDelay;
+    public float timer = 0f;
+    public bool countDown = false;
+
 
     Camera mainCam;
 
@@ -23,24 +24,14 @@ public class Shoot : MonoBehaviour
         bangbang.SetActive(false);
     }
 
-    void Start()
-    {
-        T_ShootDelay = shootDelay;
-    }
 
     void Update()
     {
-        if (T_ShootDelay < shootDelay)
+        if (countDown == true)
         {
-            T_ShootDelay += Time.deltaTime;
+            timer -= Time.deltaTime;
         }
-
-        if (T_ShootDelay >= shootDelay)
-        {
-            T_ShootDelay = 0;
-            Shoots();
-        }
-
+        Shoots();
     }
 
     private void HandleRaycast()
@@ -57,16 +48,27 @@ public class Shoot : MonoBehaviour
 
     private void Shoots()
     {
-        if (Input.GetMouseButton(0))
+        if (timer <= 0)
         {
-            HandleRaycast();
-            bangbang.SetActive(true);
+            if (Input.GetMouseButton(0))
+            {
+                HandleRaycast();
+                bangbang.SetActive(true);
+                Counter();
+            }
+            else
+            {
+                bangbang.SetActive(false);
+            }
 
         }
-        else
-        {
-            bangbang.SetActive(false);
-        }
+
+    }
+
+    private void Counter()
+    {
+        timer = 0.5f;
+        countDown = true;
     }
 
 
