@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     [Header("HUD")]
     public GameObject HUD;
     public GameObject crafting;
+    public GameObject hotbar;
     //work pls
 
     [Header("Scripts")]
@@ -20,31 +21,17 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         crafting.SetActive(false);
+        hotbar.SetActive(true);
     }
 
     void Update()
     {
-        /*Enable and disble crafting UI
-        if (Input.GetKeyUp(KeyCode.Tab) && !crafting.activeSelf)
-        {
-            crafting.SetActive(true);
-            Debug.Log("Active");
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-        }
-            
-
-        if (Input.GetKeyDown(KeyCode.Tab) && crafting.activeSelf)
-        {
-            crafting.SetActive(false);
-            Debug.Log("Inactive");
-        } */
-
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             if (!crafting.activeSelf)
             {
                 crafting.SetActive(true);
+                hotbar.SetActive(false);
                 Debug.Log("Active");
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
@@ -54,6 +41,7 @@ public class GameManager : MonoBehaviour
             else
             {
                 crafting.SetActive(false);
+                hotbar.SetActive(true);
                 Debug.Log("Inactive");
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
