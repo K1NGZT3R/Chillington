@@ -27,17 +27,17 @@ public class Interactions : MonoBehaviour
             Debug.Log("hit bit");
         } 
         
-        if (Physics.Raycast(ray, out RaycastHit hit, Wood) && Input.GetKeyDown(KeyCode.E))
+        if (Physics.Raycast(ray, out RaycastHit hit2, Wood) && Input.GetKeyDown(KeyCode.E))
         {
             Debug.Log("hit bit");
         }
 
-        if (Physics.Raycast(ray, out RaycastHit hit, Metal) && Input.GetKeyDown(KeyCode.E))
+        if (Physics.Raycast(ray, out RaycastHit hit3, Metal) && Input.GetKeyDown(KeyCode.E))
         {
             Debug.Log("hit bit");
         } 
         
-        if (Physics.Raycast(ray, out RaycastHit hit, CarBattery) && Input.GetKeyDown(KeyCode.E))
+        if (Physics.Raycast(ray, out RaycastHit hit4, CarBattery) && Input.GetKeyDown(KeyCode.E))
         {
             Debug.Log("hit bit");
         }
