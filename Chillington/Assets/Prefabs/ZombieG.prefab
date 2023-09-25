@@ -736,6 +736,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6708667666909460844}
   - component: {fileID: 8914910391502551519}
+  - component: {fileID: 161264727223559661}
   m_Layer: 0
   m_Name: Zombie
   m_TagString: Untagged
@@ -838,6 +839,19 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.0011097316, y: 0.0031185283, z: 0.0022838113}
     m_Extent: {x: 0.006759436, y: 0.007957889, z: 0.0061905254}
   m_DirtyAABB: 0
+--- !u!65 &161264727223559661
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4843573133002236048}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0135188745, y: 0.0123810535, z: 0.015915774}
+  m_Center: {x: 0.0011097309, y: 0.0022838116, z: 0.007178084}
 --- !u!1 &5145627286358211801
 GameObject:
   m_ObjectHideFlags: 0
