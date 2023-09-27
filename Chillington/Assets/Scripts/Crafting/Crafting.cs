@@ -13,22 +13,20 @@ public class Crafting : MonoBehaviour
 
     [Header("Items")]
     //Tools
-    public int hammer;
+    public int knife;
     public int machete;
-
+    public int sword;
     //Other
-    public int landmine;
-    public int electricFence;
-    public int fence;
-    public int gate;
+    
+    public int spikes;
 
 
-    public void CraftHammer()
+    public void CraftKnife()
     {
-        if (wood >= 2 && stone >= 1)
+        if (metal >= 2 && stone >= 1)
         {
-            hammer = hammer + 1;
-            wood = wood - 2;
+            knife = knife + 1;
+            metal = metal - 2;
             stone = stone - 1;
         }
     }
@@ -43,46 +41,24 @@ public class Crafting : MonoBehaviour
         }
     }
 
-    public void CraftLandmine()
+    public void CraftSword()
     {
-        if (metal >= 5 && stone >= 10 && wood >= 2)
+        if (metal >= 6 && stone >= 3 && wood >= 3)
         {
-            landmine = landmine + 1;
-            metal = metal - 5;
-            stone = stone - 10;
-            wood = wood - 2;
+            sword = sword + 1;
+            metal = metal - 7;
+            stone = stone - 3;
+            wood = wood - 3;
         }
     }
 
-    public void CraftElectricFence()
+    public void CraftSpikes()
     {
         if (carBattery >= 1 && metal >= 10)
         {
-            electricFence = electricFence + 1;
+            spikes = spikes + 1;
             carBattery = carBattery - 1;
             metal = metal - 10;
         }
     }
-
-    public void CraftFence()
-    {
-        if (metal >= 10)
-        {
-            fence = fence + 1;
-            metal = metal - 10;
-        }
-    }
-
-    public void CraftGate()
-    {
-        if (metal >= 10 && stone >= 2)
-        {
-            gate = gate + 1;
-            metal = metal - 10;
-            stone = stone - 2;
-        }
-    }
-
-//goopy poopie
-
 }
