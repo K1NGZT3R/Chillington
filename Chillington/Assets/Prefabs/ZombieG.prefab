@@ -44,27 +44,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 11459964867058814}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f347627c8691e34e97d99f8f63caf3f, type: 3}
+  m_Script: {fileID: 11500000, guid: 836180f396a4e9649a8884da0eb32005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 930520088359412011}
+  agent: {fileID: 0}
   player: {fileID: 0}
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 320
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 128
-  health: 10
+  health: 0
   walkPoint: {x: 0, y: 0, z: 0}
-  walkPointRange: 50
-  timeBetweenAttacks: 1
+  walkPointRange: 0
+  timeBetweenAttacks: 0
   deadMan: 0
   OnCaughtPlayer:
     m_PersistentCalls:
       m_Calls: []
-  sightRange: 100
-  attackRange: 1
+  sightRange: 0
+  attackRange: 0
   playerInSightRange: 0
   playerInAttackRange: 0
 --- !u!195 &930520088359412011

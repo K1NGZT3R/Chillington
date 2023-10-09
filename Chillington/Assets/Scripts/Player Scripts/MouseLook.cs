@@ -15,7 +15,7 @@ public class MouseLook : MonoBehaviour
     public float defaultFOV = 60;
     public float aimFOV = 40;
     public float unAimFOV = 60f;
-    public float lerpTime = 3f;
+    public float lerpTime = 1f;
     //might need to add the value to variable in unity UI
 
     private void Start()

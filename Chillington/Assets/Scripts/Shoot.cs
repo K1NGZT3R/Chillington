@@ -62,6 +62,7 @@ public class Shoot : MonoBehaviour
             }
 
         }
+        bangbang.SetActive(false);
 
     }
 

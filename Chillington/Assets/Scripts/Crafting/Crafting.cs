@@ -1,25 +1,37 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class Crafting : MonoBehaviour
 {
     [Header("Resources")]
+    public TMP_Text woodT;
+    public TMP_Text metalT;
+    public TMP_Text stoneT;
+
     public int wood;
     public int metal;
     public int stone;
-
-    public int carBattery;
 
     [Header("Items")]
     //Tools
     public int knife;
     public int machete;
     public int sword;
-    //Other
     
-    public int spikes;
+    //Base Upgrades
+    public int traps;
+    public int fence;
 
+
+    private void Update()
+    {
+        woodT.text = ("Wood: " + wood.ToString());
+        metalT.text = ("Wood: " + metal.ToString());
+        stoneT.text = ("Wood: " + stone.ToString());
+    }
 
     public void CraftKnife()
     {
@@ -52,12 +64,21 @@ public class Crafting : MonoBehaviour
         }
     }
 
-    public void CraftSpikes()
+    public void CraftTraps()
     {
-        if (carBattery >= 1 && metal >= 10)
+        if (stone >= 10 && metal >= 10)
         {
-            spikes = spikes + 1;
-            carBattery = carBattery - 1;
+            traps = traps + 1;
+            stone = stone - 10;
+            metal = metal - 10;
+        }
+    }
+    
+    public void CraftFence()
+    {
+        if (metal >= 10)
+        {
+            fence = fence + 1;
             metal = metal - 10;
         }
     }
