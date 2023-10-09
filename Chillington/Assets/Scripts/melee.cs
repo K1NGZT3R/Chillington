@@ -40,7 +40,7 @@ public class melee : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Hittable"))
         {
-            Debug.Log("you stabbed a minority");
+            Debug.Log("you stabbed a wall");
         }
     }
 

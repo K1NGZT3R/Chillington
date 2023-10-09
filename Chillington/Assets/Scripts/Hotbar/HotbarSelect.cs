@@ -8,18 +8,24 @@ public class HotbarSelect : MonoBehaviour
     public Vector3[] SlotPositions;
     private int selectedSlot = 0;
 
+    public GameObject gun;
+    public string Shoot;
+
+    public GameObject knife;
+    public string melee;
+
+
     void Start()
     {
+        (gun.GetComponent(Shoot) as MonoBehaviour).enabled = false;
+        (knife.GetComponent(melee) as MonoBehaviour).enabled = true;
 
         SlotPositions = new Vector3[7];
         
-        SlotPositions[0] = new Vector3(317, 90, 0);
-        SlotPositions[1] = new Vector3(393, 90, 0);
-        SlotPositions[2] = new Vector3(470, 90, 0);
-        SlotPositions[3] = new Vector3(547, 90, 0);
-        SlotPositions[4] = new Vector3(623, 90, 0);
-        SlotPositions[5] = new Vector3(700, 90, 0);
-        SlotPositions[6] = new Vector3(777, 90, 0);
+        SlotPositions[0] = new Vector3(551, -27, 0);
+        SlotPositions[1] = new Vector3(641, -27, 0);
+        SlotPositions[2] = new Vector3(733, -27, 0);
+        SlotPositions[3] = new Vector3(826, -27, 0);
 
     }
 
@@ -27,43 +33,33 @@ public class HotbarSelect : MonoBehaviour
     {
         if (Input.GetKeyDown("1"))
         {
+            (gun.GetComponent(Shoot) as MonoBehaviour).enabled = false;
+            (knife.GetComponent(melee) as MonoBehaviour).enabled = true;
             selectedSlot = 0;
             MoveSelectorToSlot();
         }
 
         if (Input.GetKeyDown("2"))
         {
+            (gun.GetComponent(Shoot) as MonoBehaviour).enabled = true;
+            (knife.GetComponent(melee) as MonoBehaviour).enabled = false;
             selectedSlot = 1;
             MoveSelectorToSlot();
         }
 
         if (Input.GetKeyDown("3"))
         {
+            (gun.GetComponent(Shoot) as MonoBehaviour).enabled = false;
+            (knife.GetComponent(melee) as MonoBehaviour).enabled = false;
             selectedSlot = 2;
             MoveSelectorToSlot();
         }
 
         if (Input.GetKeyDown("4"))
         {
+            (gun.GetComponent(Shoot) as MonoBehaviour).enabled = false;
+            (knife.GetComponent(melee) as MonoBehaviour).enabled = false;
             selectedSlot = 3;
-            MoveSelectorToSlot();
-        }
-
-        if (Input.GetKeyDown("5"))
-        {
-            selectedSlot = 4;
-            MoveSelectorToSlot();
-        }
-
-        if (Input.GetKeyDown("6"))
-        {
-            selectedSlot = 5;
-            MoveSelectorToSlot();
-        }
-
-        if (Input.GetKeyDown("7"))
-        {
-            selectedSlot = 6;
             MoveSelectorToSlot();
         }
 
