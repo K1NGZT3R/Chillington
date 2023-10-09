@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Hittable
+  - Stone
+  - Wood
+  - Metal
   layers:
   - Default
   - TransparentFX
