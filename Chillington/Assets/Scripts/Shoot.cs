@@ -13,9 +13,7 @@ public class Shoot : MonoBehaviour
 
     public float timer = 0f;
     public bool countDown = false;
-
-    public GameObject otherScripts;
-    private EnemyAI enemyAI;
+    public int damageAmount = 1;
 
     Camera mainCam;
 
@@ -24,7 +22,6 @@ public class Shoot : MonoBehaviour
         //fetches the main camera and stores it in a variable
         mainCam = Camera.main;
         bangbang.SetActive(false);
-        enemyAI = otherScripts.GetComponent<EnemyAI>();
     }
 
 
@@ -39,13 +36,20 @@ public class Shoot : MonoBehaviour
 
     private void HandleRaycast()
     {
-        if (Physics.Raycast(mainCam.transform.position, mainCam.transform.forward, out RaycastHit hit, weaponRange, hittableLayer))
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, transform.forward, out hit))
         {
-            Debug.Log("You shot something");
-        }
-        else
-        {
-            Debug.Log("You missed");
+            // Check if the raycast hit an enemy
+            if (hit.collider.gameObject.tag == "Hittable")
+            {
+                Debug.Log("Hit an enemy!");
+
+                // Get the Enemy component
+                EnemyAI enemyAI = hit.collider.gameObject.GetComponent<EnemyAI>();
+
+                // Call the TakeDamage method to decrease the enemy's health
+                enemyAI.TakeDamage(damageAmount);
+            }
         }
     }
 

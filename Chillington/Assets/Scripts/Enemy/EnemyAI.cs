@@ -12,9 +12,10 @@ public class EnemyAI : MonoBehaviour
 
     public Transform player;
 
+
     public LayerMask whatIsGround, whatIsPlayer;
 
-    public float health;
+    public int health = 10;
 
     [Header("References")]
     //Patroling
@@ -54,10 +55,8 @@ public class EnemyAI : MonoBehaviour
             OnCaughtPlayer?.Invoke();
         }
 
-        if(health == 0)
-        {
-            zombs.SetActive(false);
-        }
+
+
     }
 
     private void Patroling()
@@ -132,4 +131,5 @@ public class EnemyAI : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
 }
