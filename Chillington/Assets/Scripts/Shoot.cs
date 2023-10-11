@@ -5,7 +5,7 @@ using UnityEngine;
 public class Shoot : MonoBehaviour
 {
 
-    public GameObject bangbang;
+    //public GameObject bangbang;
 
     [Header("Raycast")]
     [SerializeField] LayerMask hittableLayer;
@@ -21,7 +21,7 @@ public class Shoot : MonoBehaviour
     {
         //fetches the main camera and stores it in a variable
         mainCam = Camera.main;
-        bangbang.SetActive(false);
+        //bangbang.SetActive(false);
     }
 
 
@@ -60,16 +60,16 @@ public class Shoot : MonoBehaviour
             if (Input.GetMouseButton(0))
             {
                 HandleRaycast();
-                bangbang.SetActive(true);
+                //bangbang.SetActive(true);
                 Counter();
             }
             else
             {
-                bangbang.SetActive(false);
+                //bangbang.SetActive(false);
             }
 
         }
-        bangbang.SetActive(false);
+        //bangbang.SetActive(false);
 
     }
 
