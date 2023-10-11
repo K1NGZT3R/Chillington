@@ -65,7 +65,7 @@ public class EnemyAI : MonoBehaviour
         //Walkpoint reached
         if (distanceToWalkPoint.magnitude < 1f)
             walkPointSet = false;
-        Debug.Log("Patrolling");
+        //Debug.Log("Patrolling");
     }
 
 

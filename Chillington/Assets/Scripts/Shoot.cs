@@ -38,11 +38,11 @@ public class Shoot : MonoBehaviour
     {
         if (Physics.Raycast(mainCam.transform.position, mainCam.transform.forward, out RaycastHit hit, weaponRange, hittableLayer))
         {
-            Debug.Log("Hitting a wall");
+            Debug.Log("You shot something");
         }
         else
         {
-            Debug.Log("Not hitting a wall");
+            Debug.Log("You missed");
         }
     }
 
