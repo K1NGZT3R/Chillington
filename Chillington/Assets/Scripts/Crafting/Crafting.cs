@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.UIElements;
 
 public class Crafting : MonoBehaviour
 {
@@ -22,9 +23,18 @@ public class Crafting : MonoBehaviour
     public int sword;
     
     //Base Upgrades
-    public int traps;
-    public int fence;
+    public GameObject traps;
+    public GameObject fence;
 
+    public GameObject groundFenced;
+    public GameObject ground;
+
+
+    private void Start()
+    {
+        groundFenced.SetActive(false);
+        traps.SetActive(false);
+    }
 
     private void Update()
     {
@@ -68,9 +78,10 @@ public class Crafting : MonoBehaviour
     {
         if (stone >= 10 && metal >= 10)
         {
-            traps = traps + 1;
             stone = stone - 10;
             metal = metal - 10;
+
+            traps.SetActive(true);
         }
     }
     
@@ -78,8 +89,12 @@ public class Crafting : MonoBehaviour
     {
         if (metal >= 10)
         {
-            fence = fence + 1;
             metal = metal - 10;
+
+            fence.SetActive(true);
+
+            groundFenced.SetActive(true);
+            ground.SetActive(false);
         }
     }
 }
