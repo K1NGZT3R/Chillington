@@ -8,6 +8,8 @@ public class EnemyAI : MonoBehaviour
 {
     public NavMeshAgent agent;
 
+    public GameObject zombs;
+
     public Transform player;
 
     public LayerMask whatIsGround, whatIsPlayer;
@@ -50,6 +52,11 @@ public class EnemyAI : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             OnCaughtPlayer?.Invoke();
+        }
+
+        if(health == 0)
+        {
+            zombs.SetActive(false);
         }
     }
 

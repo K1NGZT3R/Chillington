@@ -14,6 +14,8 @@ public class Shoot : MonoBehaviour
     public float timer = 0f;
     public bool countDown = false;
 
+    public GameObject otherScripts;
+    private EnemyAI enemyAI;
 
     Camera mainCam;
 
@@ -22,6 +24,7 @@ public class Shoot : MonoBehaviour
         //fetches the main camera and stores it in a variable
         mainCam = Camera.main;
         bangbang.SetActive(false);
+        enemyAI = otherScripts.GetComponent<EnemyAI>();
     }
 
 

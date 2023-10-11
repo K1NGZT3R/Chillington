@@ -7,10 +7,13 @@ public class melee : MonoBehaviour
     public Collider hitRange;
     public float counting;
 
+    public GameObject otherScripts;
+    private EnemyAI enemyAI;
+
     void Start()
     {
         hitRange.enabled = false;
-
+        enemyAI = otherScripts.GetComponent<EnemyAI>();
     }
 
 

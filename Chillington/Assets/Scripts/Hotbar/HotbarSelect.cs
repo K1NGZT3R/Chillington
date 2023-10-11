@@ -14,11 +14,15 @@ public class HotbarSelect : MonoBehaviour
     public GameObject knife;
     public string melee;
 
+    public GameObject healer;
+    public string Heal;
+
 
     void Start()
     {
         (gun.GetComponent(Shoot) as MonoBehaviour).enabled = false;
         (knife.GetComponent(melee) as MonoBehaviour).enabled = true;
+        (healer.GetComponent(Heal) as MonoBehaviour).enabled = false;
 
         SlotPositions = new Vector3[7];
         
@@ -35,6 +39,7 @@ public class HotbarSelect : MonoBehaviour
         {
             (gun.GetComponent(Shoot) as MonoBehaviour).enabled = false;
             (knife.GetComponent(melee) as MonoBehaviour).enabled = true;
+            (healer.GetComponent(Heal) as MonoBehaviour).enabled = false;
             selectedSlot = 0;
             MoveSelectorToSlot();
         }
@@ -43,6 +48,7 @@ public class HotbarSelect : MonoBehaviour
         {
             (gun.GetComponent(Shoot) as MonoBehaviour).enabled = true;
             (knife.GetComponent(melee) as MonoBehaviour).enabled = false;
+            (healer.GetComponent(Heal) as MonoBehaviour).enabled = false;
             selectedSlot = 1;
             MoveSelectorToSlot();
         }
@@ -51,6 +57,7 @@ public class HotbarSelect : MonoBehaviour
         {
             (gun.GetComponent(Shoot) as MonoBehaviour).enabled = false;
             (knife.GetComponent(melee) as MonoBehaviour).enabled = false;
+            (healer.GetComponent(Heal) as MonoBehaviour).enabled = true;
             selectedSlot = 2;
             MoveSelectorToSlot();
         }
@@ -59,6 +66,7 @@ public class HotbarSelect : MonoBehaviour
         {
             (gun.GetComponent(Shoot) as MonoBehaviour).enabled = false;
             (knife.GetComponent(melee) as MonoBehaviour).enabled = false;
+            (healer.GetComponent(Heal) as MonoBehaviour).enabled = false;
             selectedSlot = 3;
             MoveSelectorToSlot();
         }
