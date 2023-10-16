@@ -6,7 +6,8 @@ public enum EPickupType
 {
     EPT_Stone,
     EPT_Metal,
-    EPT_Wood
+    EPT_Wood,
+    EPT_Medkit
 }
 
 public class InteractableComp : MonoBehaviour

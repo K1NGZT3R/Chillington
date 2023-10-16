@@ -8,7 +8,9 @@ public class Pickup : MonoBehaviour
     public float pickupRange = 100;
     Camera mainCam;
     public InteractableComp sensedObj = null;
+
     public Crafting crafting;
+    public Heal heal;
 
     void Awake()
     {
@@ -56,6 +58,10 @@ public class Pickup : MonoBehaviour
             if (sensedObj.pickupType == EPickupType.EPT_Stone)
             {
                 crafting.stone++;
+            }
+            if (sensedObj.pickupType == EPickupType.EPT_Medkit)
+            {
+                heal.healsLeft++;
             }
 
             DestroyImmediate(sensedObj.gameObject);
