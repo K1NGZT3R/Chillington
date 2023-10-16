@@ -61,6 +61,7 @@ public class Shoot : MonoBehaviour
             {
                 HandleRaycast();
                 //bangbang.SetActive(true);
+                Debug.Log("Bang Bang Gangta");
                 Counter();
             }
             else

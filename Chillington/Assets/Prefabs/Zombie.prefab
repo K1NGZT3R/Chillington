@@ -526,12 +526,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1531702633704910896}
   - component: {fileID: 4873351895470516810}
-  - component: {fileID: 2250446208906285661}
-  - component: {fileID: 2250446208906285660}
-  - component: {fileID: 2250446208906285655}
-  - component: {fileID: 2250446208906285654}
-  - component: {fileID: 2250446208906285657}
+  - component: {fileID: 1131113227462162962}
   - component: {fileID: 2250446208906285658}
+  - component: {fileID: 1131113227462162967}
   m_Layer: 3
   m_Name: Zombie
   m_TagString: Hittable
@@ -547,8 +544,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2164652258148657802}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.6621, y: 1.2827, z: -18.894669}
-  m_LocalScale: {x: 2.508938, y: 2.508938, z: 2.508938}
+  m_LocalPosition: {x: -742.67, y: 0.2, z: -742.56}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7333996890580813987}
@@ -577,24 +574,8 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!54 &2250446208906285661
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2164652258148657802}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!65 &2250446208906285660
-BoxCollider:
+--- !u!136 &1131113227462162962
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -603,75 +584,10 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1.941474, z: 1}
-  m_Center: {x: 0, y: 0.9208347, z: 0}
---- !u!114 &2250446208906285655
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2164652258148657802}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 836180f396a4e9649a8884da0eb32005, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  agent: {fileID: 2250446208906285658}
-  player: {fileID: 0}
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 256
-  whatIsPlayer:
-    serializedVersion: 2
-    m_Bits: 128
-  health: 0
-  walkPoint: {x: 0, y: 0, z: 0}
-  walkPointRange: 50
-  timeBetweenAttacks: 2
-  deadMan: 0
-  OnCaughtPlayer:
-    m_PersistentCalls:
-      m_Calls: []
-  sightRange: 100
-  attackRange: 5
-  playerInSightRange: 0
-  playerInAttackRange: 0
---- !u!114 &2250446208906285654
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2164652258148657802}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab49c75d02a64e14ba00e6b60651740c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  radius: 180
-  angle: 90
-  playerRef: {fileID: 0}
-  targetMask:
-    serializedVersion: 2
-    m_Bits: 128
-  obstructionMask:
-    serializedVersion: 2
-    m_Bits: 0
-  canSeePlayer: 1
---- !u!114 &2250446208906285657
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2164652258148657802}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d6e4d9ea4b6a7a4492e20c45caf88b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Radius: 0.5
+  m_Height: 2.0082197
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.8736162, z: 0}
 --- !u!195 &2250446208906285658
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -686,7 +602,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 2
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -694,6 +610,39 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &1131113227462162967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2164652258148657802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 981cfda5167538848b58f3ca65258a15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agent: {fileID: 2250446208906285658}
+  zombs: {fileID: 2164652258148657802}
+  player: {fileID: 0}
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 256
+  whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 128
+  health: 10
+  walkPoint: {x: 0, y: 0, z: 0}
+  walkPointRange: 0
+  timeBetweenAttacks: 0
+  deadMan: 0
+  OnCaughtPlayer:
+    m_PersistentCalls:
+      m_Calls: []
+  sightRange: 50
+  attackRange: 1
+  playerInSightRange: 0
+  playerInAttackRange: 0
 --- !u!1 &2192891990821852419
 GameObject:
   m_ObjectHideFlags: 0
