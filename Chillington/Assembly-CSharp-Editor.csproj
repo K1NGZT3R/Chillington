@@ -56,9 +56,9 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Auto Letterbox\Demos\Game Demo\Scripts\Editor\TerrainSegmentEditor.cs" />
     <Compile Include="Assets\Scripts\NavMeshComponents\Editor\NavMeshModifierVolumeEditor.cs" />
     <Compile Include="Assets\Auto Letterbox\Editor\ForceCameraRatioEditor.cs" />
+    <Compile Include="Assets\Auto Letterbox\Demos\Game Demo\Scripts\Editor\TerrainSegmentEditor.cs" />
     <Compile Include="Assets\Scripts\NavMeshComponents\Editor\NavMeshSurfaceEditor.cs" />
     <Compile Include="Assets\Scripts\NavMeshComponents\Editor\NavMeshModifierEditor.cs" />
     <Compile Include="Assets\Scripts\NavMeshComponents\Editor\NavMeshComponentsGUIUtility.cs" />
