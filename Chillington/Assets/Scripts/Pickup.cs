@@ -5,12 +5,10 @@ using UnityEngine;
 public class Pickup : MonoBehaviour
 {
     [Header("Raycast")]
-    public float weaponRange;
+    public float pickupRange = 100;
     Camera mainCam;
-
-    public int woodCount;
-    public int stoneCount;
-    public int metalCount;
+    public InteractableComp sensedObj = null;
+    public Crafting crafting;
 
     void Awake()
     {
@@ -21,31 +19,48 @@ public class Pickup : MonoBehaviour
 
     void Update()
     {
-        Shoots();
-    }
+        Ray ray = mainCam.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
 
-    private void HandleRaycast()
-    {
-        /*if (Physics.Raycast(mainCam.transform.position, mainCam.transform.forward, out RaycastHit hit, weaponRange, hittableLayer))
-        {
-            Debug.Log("Hitting a wall");
-        }
-        else
-        {
-            Debug.Log("Not hitting a wall");
-        }*/
-    }
+        Debug.DrawRay(ray.origin, ray.direction * pickupRange, Color.red);
 
-    private void Shoots()
-    {
-            if (Input.GetKeyDown(KeyCode.E))
+        if (Physics.Raycast(ray, out hit, pickupRange))
+        {
+            InteractableComp obj = hit.collider.GetComponent<InteractableComp>();
+            if (obj)
             {
-                HandleRaycast();
-                //bangbang.SetActive(true);
+                sensedObj = obj;
             }
             else
             {
-                //bangbang.SetActive(false);
+                sensedObj = null;
             }
+        }
+        else
+        {
+            sensedObj = null;
+        }
+
+        if (Input.GetKeyDown(KeyCode.E) && sensedObj)
+        {
+            Debug.Log(sensedObj.name);
+
+            if(sensedObj.pickupType == EPickupType.EPT_Wood)
+            {
+                crafting.wood++;
+            }
+            if (sensedObj.pickupType == EPickupType.EPT_Metal)
+            {
+                crafting.metal++;
+            }
+            if (sensedObj.pickupType == EPickupType.EPT_Stone)
+            {
+                crafting.stone++;
+            }
+
+            DestroyImmediate(sensedObj.gameObject);
+        }
     }
+
+    
 }

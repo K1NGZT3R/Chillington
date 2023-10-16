@@ -126,6 +126,7 @@
     <Compile Include="Assets\Auto Letterbox\Demos\Game Demo\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Enemy\FieldOfView.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
+    <Compile Include="Assets\Scripts\InteractableComp.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
