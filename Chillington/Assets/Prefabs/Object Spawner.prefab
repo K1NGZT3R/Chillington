@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 2972874950453051731}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -47.1, y: 0.613, z: 42.6}
-  m_LocalScale: {x: 80, y: 1, z: 50}
+  m_LocalScale: {x: 80, y: 0.5, z: 50}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -45,8 +45,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnableObjects:
-  - spawnObject: {fileID: 682230608219383705, guid: 071f5d35a8e3a1e46a07736586f6ea53, type: 3}
-  - spawnObject: {fileID: 8262710395964344967, guid: 4c05aa01954082642b05593b5f17d714, type: 3}
+  - spawnObject: {fileID: 440620992085275791, guid: d94167d3699cab243a516291a9a66523, type: 3}
+  - spawnObject: {fileID: 8020316069177234342, guid: 84e8050a92816fd43a9b61df3009d305, type: 3}
+  - spawnObject: {fileID: 583210860431764584, guid: 161dd6f14a6eb7744afce9e3bcab57fb, type: 3}
+  - spawnObject: {fileID: 479002970676868383, guid: 3b8b8634e02b4934ca3984f37eea7929, type: 3}
   spawnAmount: 50
   spawnDelay: 0.1
   GizmosColor: {r: 0.9716981, g: 0, b: 0, a: 0.2}
