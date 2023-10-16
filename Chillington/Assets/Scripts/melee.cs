@@ -10,6 +10,8 @@ public class melee : MonoBehaviour
     public GameObject otherScripts;
     private EnemyAI enemyAI;
 
+    public int damageAmount = 5;
+
     void Start()
     {
         hitRange.enabled = false;
@@ -43,6 +45,8 @@ public class melee : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Hittable"))
         {
+            //it dont wanna work, the zombies dont want to die
+            Destroy(other.gameObject);
             Debug.Log("you stabbed something");
         }
     }

@@ -60,6 +60,7 @@ public class Shoot : MonoBehaviour
             if (Input.GetMouseButton(0))
             {
                 HandleRaycast();
+                Debug.Log("bang");
                 //bangbang.SetActive(true);
                 Counter();
             }
