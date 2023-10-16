@@ -2,25 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class PlayerHealth : MonoBehaviour
 {
     public GameObject HealthBar;
     public int Health = 10;
+    public int healsLeft = 3;
+    public TMP_Text myText;
 
     public float newWidthUI = 296.65f;
     public float height = 41.168f;
 
+    public Heal heal;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        Debug.Log("WHy");
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        myText.text = healsLeft.ToString();
     }
 
     void OnTriggerEnter(Collider other)

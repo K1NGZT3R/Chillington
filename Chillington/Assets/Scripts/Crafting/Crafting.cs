@@ -39,8 +39,8 @@ public class Crafting : MonoBehaviour
     private void Update()
     {
         woodT.text = ("Wood: " + wood.ToString());
-        metalT.text = ("Wood: " + metal.ToString());
-        stoneT.text = ("Wood: " + stone.ToString());
+        metalT.text = ("Metal: " + metal.ToString());
+        stoneT.text = ("Stone: " + stone.ToString());
     }
 
     public void CraftKnife()

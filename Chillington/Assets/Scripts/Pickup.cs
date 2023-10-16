@@ -10,7 +10,7 @@ public class Pickup : MonoBehaviour
     public InteractableComp sensedObj = null;
 
     public Crafting crafting;
-    public Heal heal;
+    public PlayerHealth heal;
 
     void Awake()
     {
