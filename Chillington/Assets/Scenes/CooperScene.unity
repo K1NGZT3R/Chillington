@@ -375,8 +375,6 @@ MonoBehaviour:
   agent: {fileID: 20750125}
   zombs: {fileID: 20750121}
   player: {fileID: 1271660763}
-  hitTime: 0
-  hitMarker: {fileID: 2031208200}
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
@@ -395,6 +393,7 @@ MonoBehaviour:
   attackRange: 0
   playerInSightRange: 0
   playerInAttackRange: 0
+  shootScript: {fileID: 1077008828}
 --- !u!114 &20750123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3230,8 +3229,6 @@ MonoBehaviour:
   agent: {fileID: 1043823692}
   zombs: {fileID: 1043823688}
   player: {fileID: 1271660763}
-  hitTime: 0
-  hitMarker: {fileID: 2031208200}
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
@@ -3250,6 +3247,7 @@ MonoBehaviour:
   attackRange: 0
   playerInSightRange: 0
   playerInAttackRange: 0
+  shootScript: {fileID: 1077008828}
 --- !u!114 &1043823690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3443,6 +3441,8 @@ MonoBehaviour:
   timer: 0
   countDown: 0
   damageAmount: 3
+  hitTime: 0
+  hitMarker: {fileID: 2031208200}
 --- !u!1 &1078640016
 GameObject:
   m_ObjectHideFlags: 0

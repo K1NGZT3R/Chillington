@@ -14,6 +14,8 @@ public class Shoot : MonoBehaviour
     public float timer = 0f;
     public bool countDown = false;
     public int damageAmount = 1;
+    public float hitTime = 0f;
+    public GameObject hitMarker;
 
     Camera mainCam;
 
@@ -32,6 +34,16 @@ public class Shoot : MonoBehaviour
             timer -= Time.deltaTime;
         }
         Shoots();
+
+        if (hitTime > 0)
+        {
+            hitMarker.SetActive(true);
+            hitTime = hitTime - Time.deltaTime;
+        }
+        else
+        {
+            hitMarker.SetActive(false);
+        }
     }
 
     private void HandleRaycast()
@@ -47,6 +59,7 @@ public class Shoot : MonoBehaviour
                 // Get the Enemy component
                 EnemyAI enemyAI = hit.collider.gameObject.GetComponent<EnemyAI>();
 
+                hitTime = 0.15f;
                 // Call the TakeDamage method to decrease the enemy's health
                 enemyAI.TakeDamage(damageAmount);
             }

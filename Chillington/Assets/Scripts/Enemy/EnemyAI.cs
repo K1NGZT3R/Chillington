@@ -12,10 +12,6 @@ public class EnemyAI : MonoBehaviour
 
     public Transform player;
 
-    public float hitTime = 0f;
-
-    public GameObject hitMarker;
-
     public LayerMask whatIsGround, whatIsPlayer;
 
     public int health = 10;
@@ -37,10 +33,14 @@ public class EnemyAI : MonoBehaviour
     public float sightRange, attackRange;
     public bool playerInSightRange, playerInAttackRange;
 
+    public GameObject shootScript;
+    private Shoot shoot;
+
     private void Start()
     {
         player = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
+        shoot = shootScript.GetComponent<Shoot>();
     }
 
     private void Update()
@@ -58,15 +58,6 @@ public class EnemyAI : MonoBehaviour
             OnCaughtPlayer?.Invoke();
         }
 
-        if (hitTime > 0)
-        {
-            hitMarker.SetActive(true);
-            hitTime = hitTime - Time.deltaTime;
-        }
-        else
-        {
-            hitMarker.SetActive(false);
-        }
 
 
     }
@@ -132,21 +123,18 @@ public class EnemyAI : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        hitTime = 0.15f;
+
         health -= damage;
-
-
-
 
         if (health <= 0)
         {
-            hitMarker.SetActive(false);
+            shoot.hitMarker.SetActive(false);
             Invoke(nameof(DestroyEnemy), 0.5f);
         }
     }
     public void DestroyEnemy()
     {
-        hitMarker.SetActive(false);
+        shoot.hitMarker.SetActive(false);
         Destroy(gameObject);
     }
 
