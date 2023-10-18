@@ -627,6 +627,8 @@ MonoBehaviour:
   agent: {fileID: 2250446208906285658}
   zombs: {fileID: 2164652258148657802}
   player: {fileID: 0}
+  hitTime: 0
+  hitMarker: {fileID: 0}
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
