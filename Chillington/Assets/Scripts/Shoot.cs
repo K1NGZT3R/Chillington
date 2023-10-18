@@ -16,6 +16,8 @@ public class Shoot : MonoBehaviour
     public int damageAmount = 1;
     public float hitTime = 0f;
     public GameObject hitMarker;
+    public float killScreen = 0f;
+    public GameObject killCred;
 
     Camera mainCam;
 
@@ -43,6 +45,16 @@ public class Shoot : MonoBehaviour
         else
         {
             hitMarker.SetActive(false);
+        }
+
+        if(killScreen > 0)
+        {
+            killScreen = killScreen - Time.deltaTime;
+            killCred.SetActive(true);
+        }
+        else
+        {
+            killCred.SetActive(false);
         }
     }
 

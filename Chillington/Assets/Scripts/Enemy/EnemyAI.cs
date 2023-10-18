@@ -134,6 +134,7 @@ public class EnemyAI : MonoBehaviour
     }
     public void DestroyEnemy()
     {
+        shoot.killScreen = 2.5f;
         shoot.hitMarker.SetActive(false);
         Destroy(gameObject);
     }
