@@ -6,17 +6,21 @@ public class WaveSpawner : MonoBehaviour
 {
     public List<Enemy> enemies = new List<Enemy>();
     public List<SpawnLocations> spawnLocations = new();
-    public int currWave;
-    public int waveValue;
-    public List<GameObject> enemiesToSpawn = new List<GameObject>();
 
+    [Header ("-SET IN WAVE MANAGER-")]
+    public int currWave = 0;
+    public int waveDuration = 0;
+
+    [Header ("-DEBUG-")]
     public Transform spawnLocation;
-    public int waveDuration;
+    public int waveValue;
     private float waveTimer;
     public float spawnInterval;
     public float spawnTimer;
-   
-    void Start() //change to on awake so you can wake up the script and do it all again if enemies to spawn is nothing than kill script and plus one to wave?
+    public List<GameObject> enemiesToSpawn = new List<GameObject>();
+
+
+    void OnEnable()
     {
         GenerateWave();
     }

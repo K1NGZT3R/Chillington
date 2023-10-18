@@ -127,6 +127,8 @@
     <Compile Include="Assets\Auto Letterbox\ForceCameraRatio.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\Scripts\Pickup.cs" />
+    <Compile Include="Assets\Scripts\WaveCycleManager.cs" />
+    <Compile Include="Assets\Scripts\LightingPreset.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
