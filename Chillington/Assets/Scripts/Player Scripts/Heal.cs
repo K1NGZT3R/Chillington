@@ -6,8 +6,8 @@ using TMPro;
 
 public class Heal : MonoBehaviour
 {
-    public int healsLeft = 3;
-    public TMP_Text myText;
+
+    //public TMP_Text myText;
 
     public GameObject otherScript; 
     private PlayerHealth playerHealth;
@@ -21,9 +21,10 @@ public class Heal : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (Input.GetMouseButtonDown(0))
         {
-            if(healsLeft > 0 && playerHealth.Health < 10)
+            if(playerHealth.healsLeft > 0 && playerHealth.Health < 10)
             {
                 healing();
             }
@@ -41,8 +42,9 @@ public class Heal : MonoBehaviour
 
     private void healing()
     {
-        healsLeft = healsLeft - 1;
-        myText.text = healsLeft.ToString();
+        playerHealth.healsLeft = playerHealth.healsLeft - 1;
+        
+
 
         if (playerHealth.Health == 9)
         {
