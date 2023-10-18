@@ -10,10 +10,14 @@ public class melee : MonoBehaviour
     public GameObject otherScripts;
     private EnemyAI enemyAI;
 
+    public GameObject shootScript;
+    private Shoot shoot;
+
     public int damageAmount = 5;
 
     void Start()
     {
+        shoot = shootScript.GetComponent<Shoot>();
         hitRange.enabled = false;
         enemyAI = otherScripts.GetComponent<EnemyAI>();
     }
@@ -22,6 +26,15 @@ public class melee : MonoBehaviour
     void Update()
     {
         hits();
+        if (shoot.killScreen > 0)
+        {
+            shoot.killScreen = shoot.killScreen - Time.deltaTime;
+            shoot.killCred.SetActive(true);
+        }
+        else
+        {
+            shoot.killCred.SetActive(false);
+        }
 
     }
 

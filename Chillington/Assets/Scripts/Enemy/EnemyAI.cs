@@ -12,7 +12,6 @@ public class EnemyAI : MonoBehaviour
 
     public Transform player;
 
-
     public LayerMask whatIsGround, whatIsPlayer;
 
     public int health = 10;
@@ -34,10 +33,14 @@ public class EnemyAI : MonoBehaviour
     public float sightRange, attackRange;
     public bool playerInSightRange, playerInAttackRange;
 
+    public GameObject shootScript;
+    private Shoot shoot;
+
     private void Start()
     {
         player = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
+        shoot = shootScript.GetComponent<Shoot>();
     }
 
     private void Update()
@@ -120,15 +123,19 @@ public class EnemyAI : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+
         health -= damage;
 
         if (health <= 0)
         {
+            shoot.hitMarker.SetActive(false);
             Invoke(nameof(DestroyEnemy), 0.5f);
         }
     }
     public void DestroyEnemy()
     {
+        shoot.killScreen = 2.5f;
+        shoot.hitMarker.SetActive(false);
         Destroy(gameObject);
     }
 

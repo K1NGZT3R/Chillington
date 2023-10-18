@@ -17,6 +17,11 @@ public class HotbarSelect : MonoBehaviour
     public GameObject healer;
     public string Heal;
 
+    public GameObject h1;
+    public GameObject h2;
+    public GameObject h3;
+    public GameObject h4;
+
 
     void Start()
     {
@@ -24,12 +29,6 @@ public class HotbarSelect : MonoBehaviour
         (knife.GetComponent(melee) as MonoBehaviour).enabled = true;
         (healer.GetComponent(Heal) as MonoBehaviour).enabled = false;
 
-        SlotPositions = new Vector3[7];
-        
-        SlotPositions[0] = new Vector3(551, -27, 0);
-        SlotPositions[1] = new Vector3(641, -27, 0);
-        SlotPositions[2] = new Vector3(733, -27, 0);
-        SlotPositions[3] = new Vector3(826, -27, 0);
 
     }
 
@@ -37,50 +36,46 @@ public class HotbarSelect : MonoBehaviour
     {
         if (Input.GetKeyDown("1"))
         {
-            (gun.GetComponent(Shoot) as MonoBehaviour).enabled = false;
-            (knife.GetComponent(melee) as MonoBehaviour).enabled = true;
-            (healer.GetComponent(Heal) as MonoBehaviour).enabled = false;
-            selectedSlot = 0;
-            MoveSelectorToSlot();
+            h1.SetActive(true);
+            h2.SetActive(false);
+            h3.SetActive(false);
+            h4.SetActive(false);
         }
 
         if (Input.GetKeyDown("2"))
         {
-            (gun.GetComponent(Shoot) as MonoBehaviour).enabled = true;
-            (knife.GetComponent(melee) as MonoBehaviour).enabled = false;
-            (healer.GetComponent(Heal) as MonoBehaviour).enabled = false;
-            selectedSlot = 1;
-            MoveSelectorToSlot();
+            h1.SetActive(false);
+            h2.SetActive(true);
+            h3.SetActive(false);
+            h4.SetActive(false);
         }
 
         if (Input.GetKeyDown("3"))
         {
-            (gun.GetComponent(Shoot) as MonoBehaviour).enabled = false;
-            (knife.GetComponent(melee) as MonoBehaviour).enabled = false;
-            (healer.GetComponent(Heal) as MonoBehaviour).enabled = true;
-            selectedSlot = 2;
-            MoveSelectorToSlot();
+            h1.SetActive(false);
+            h2.SetActive(false);
+            h3.SetActive(true);
+            h4.SetActive(false);
         }
 
         if (Input.GetKeyDown("4"))
         {
-            (gun.GetComponent(Shoot) as MonoBehaviour).enabled = false;
-            (knife.GetComponent(melee) as MonoBehaviour).enabled = false;
-            (healer.GetComponent(Heal) as MonoBehaviour).enabled = false;
-            selectedSlot = 3;
-            MoveSelectorToSlot();
+            h1.SetActive(false);
+            h2.SetActive(false);
+            h3.SetActive(false);
+            h4.SetActive(true);
         }
 
     }
 
-    void MoveSelectorToSlot()
-    {
+   // void MoveSelectorToSlot()
+   // {
         // Check if the selected slot is within the SlotPositions array bounds
-        if (selectedSlot >= 0 && selectedSlot < SlotPositions.Length)
-        {
+   //     if (selectedSlot >= 0 && selectedSlot < SlotPositions.Length)
+   //     {
             // Move the selector to the corresponding position
-            Selector.transform.position = SlotPositions[selectedSlot];
-        }
-    }
+    //        Selector.transform.position = SlotPositions[selectedSlot];
+    //    }
+  //  }
 }
 

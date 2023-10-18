@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -26,6 +27,10 @@ public class PlayerHealth : MonoBehaviour
     void Update()
     {
         myText.text = healsLeft.ToString();
+        if(Health <= 0)
+        {
+            SceneManager.LoadScene(sceneBuildIndex: 0);
+        }
     }
 
     void OnTriggerEnter(Collider other)
