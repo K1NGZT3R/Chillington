@@ -3975,8 +3975,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db3f627c36801b84cb8776765f53f3db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healsLeft: 3
-  myText: {fileID: 235053940}
   otherScript: {fileID: 1271660757}
 --- !u!114 &1271660767
 MonoBehaviour:
@@ -3992,8 +3990,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HealthBar: {fileID: 1356489278}
   Health: 10
+  healsLeft: 3
+  myText: {fileID: 235053940}
   newWidthUI: 296.65
   height: 41.168
+  heal: {fileID: 0}
 --- !u!1 &1303781592
 GameObject:
   m_ObjectHideFlags: 0
@@ -5336,7 +5337,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 756c185403d6ece4386950d280da9cfd, type: 2}
+  - {fileID: 2100000, guid: 471b1dead655e5f438dc8b39c22a2e02, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
