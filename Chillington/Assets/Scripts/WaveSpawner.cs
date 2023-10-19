@@ -58,9 +58,7 @@ public class WaveSpawner : MonoBehaviour
 
     public void GenerateEnemies()
     {
-
-
-
+        generatedEnemies.Clear();
         List<GameObject> generatedEnemies = new List<GameObject>();
         while (waveValue > 0)
         {
