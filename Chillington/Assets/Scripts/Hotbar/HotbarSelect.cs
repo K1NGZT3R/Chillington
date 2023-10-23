@@ -40,6 +40,9 @@ public class HotbarSelect : MonoBehaviour
             h2.SetActive(false);
             h3.SetActive(false);
             h4.SetActive(false);
+            (gun.GetComponent(Shoot) as MonoBehaviour).enabled = false;
+            (knife.GetComponent(melee) as MonoBehaviour).enabled = true;
+            (healer.GetComponent(Heal) as MonoBehaviour).enabled = false;
         }
 
         if (Input.GetKeyDown("2"))
@@ -48,6 +51,9 @@ public class HotbarSelect : MonoBehaviour
             h2.SetActive(true);
             h3.SetActive(false);
             h4.SetActive(false);
+            (gun.GetComponent(Shoot) as MonoBehaviour).enabled = true;
+            (knife.GetComponent(melee) as MonoBehaviour).enabled = false;
+            (healer.GetComponent(Heal) as MonoBehaviour).enabled = false;
         }
 
         if (Input.GetKeyDown("3"))
@@ -56,6 +62,9 @@ public class HotbarSelect : MonoBehaviour
             h2.SetActive(false);
             h3.SetActive(true);
             h4.SetActive(false);
+            (gun.GetComponent(Shoot) as MonoBehaviour).enabled = false;
+            (knife.GetComponent(melee) as MonoBehaviour).enabled = false;
+            (healer.GetComponent(Heal) as MonoBehaviour).enabled = true;
         }
 
         if (Input.GetKeyDown("4"))
@@ -64,6 +73,9 @@ public class HotbarSelect : MonoBehaviour
             h2.SetActive(false);
             h3.SetActive(false);
             h4.SetActive(true);
+            (gun.GetComponent(Shoot) as MonoBehaviour).enabled = false;
+            (knife.GetComponent(melee) as MonoBehaviour).enabled = false;
+            (healer.GetComponent(Heal) as MonoBehaviour).enabled = false;
         }
 
     }
