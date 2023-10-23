@@ -59,7 +59,7 @@ public class WaveCycleManager : MonoBehaviour
             }
             else
             {
-            spawner.waveDuration = spawner.waveDuration - durationDecrease
+                spawner.waveDuration = spawner.waveDuration - durationDecrease;
             }
             
             spawnerObj.SetActive(true);
@@ -68,7 +68,7 @@ public class WaveCycleManager : MonoBehaviour
         {
             Debug.Log("now day");
             spawnerObj.SetActive(false);
-            extNightTime = 1
+            extNightTime = 1;
         }
     }
 
