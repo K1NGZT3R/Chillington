@@ -11,9 +11,16 @@ public class PlayerHealth : MonoBehaviour
     public int Health = 10;
     public int healsLeft = 3;
     public TMP_Text myText;
+    public TMP_Text deathTexts;
 
     public float newWidthUI = 296.65f;
     public float height = 41.168f;
+    public GameObject deathScreen;
+
+    public GameObject playerMove;
+
+    public GameObject waveScript;
+    private WaveCycleManager waveCycleManager;
 
     public Heal heal;
 
@@ -21,6 +28,7 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         Debug.Log("WHy");
+        waveCycleManager = waveScript.GetComponent<WaveCycleManager>();
     }
 
     // Update is called once per frame
@@ -29,7 +37,11 @@ public class PlayerHealth : MonoBehaviour
         myText.text = healsLeft.ToString();
         if(Health <= 0)
         {
-            SceneManager.LoadScene(sceneBuildIndex: 0);
+            deathScreen.SetActive(true);
+            deathTexts.text = "Waves: " + waveCycleManager.cycleCount;
+            Cursor.lockState = CursorLockMode.None;
+
+            //SceneManager.LoadScene(sceneBuildIndex: 0);
         }
     }
 
@@ -67,5 +79,10 @@ public class PlayerHealth : MonoBehaviour
             {
                 rectTransform.sizeDelta = new Vector2(newWidthUI, height);
             }
+    }
+
+    public void mainMenu()
+    {
+        SceneManager.LoadScene(sceneBuildIndex: 0);
     }
 }
