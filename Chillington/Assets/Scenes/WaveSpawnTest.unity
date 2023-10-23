@@ -337,8 +337,10 @@ MonoBehaviour:
   spawnerObj: {fileID: 907677359}
   waveIncrease: 1
   durationIncrease: 30
-  timeSpeedSlowdown: 5
+  durationDecrease: 5
+  timeSpeedSlowdown: 1
   cycleCount: 1
+  extNightTime: 1
   timeOfDay: 6
   directionalLight: {fileID: 1570361700}
   preset: {fileID: 11400000, guid: be605842fdba6ca4aa6302c59f25f85e, type: 2}
