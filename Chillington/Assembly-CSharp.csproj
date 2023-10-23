@@ -60,6 +60,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
     <Compile Include="Assets\Scripts\melee.cs" />
     <Compile Include="Assets\Auto Letterbox\Demos\Game Demo\Scripts\EnemyClass.cs" />
+    <Compile Include="Assets\Scripts\menu.cs" />
     <Compile Include="Assets\Auto Letterbox\Demos\Game Demo\Scripts\FoodTracker.cs" />
     <Compile Include="Assets\Auto Letterbox\Demos\Game Demo\Scripts\Terrain\LoopingTerrain.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
@@ -82,6 +83,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
     <Compile Include="Assets\Scripts\Hotbar\HotbarSelect.cs" />
+    <Compile Include="Assets\Scripts\LightingPreset.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\Player Scripts\Interactions.cs" />
     <Compile Include="Assets\Scripts\NavMeshComponents\Scripts\NavMeshLink.cs" />
@@ -115,6 +117,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
     <Compile Include="Assets\Auto Letterbox\Demos\Game Demo\Scripts\Parralax.cs" />
     <Compile Include="Assets\Auto Letterbox\Demos\Game Demo\Scripts\LetterboxGameDemo.cs" />
+    <Compile Include="Assets\Scripts\WaveCycleManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexColorCycler.cs" />
@@ -127,8 +130,8 @@
     <Compile Include="Assets\Auto Letterbox\ForceCameraRatio.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\Scripts\Pickup.cs" />
-    <Compile Include="Assets\Scripts\WaveCycleManager.cs" />
-    <Compile Include="Assets\Scripts\LightingPreset.cs" />
+    <Compile Include="Assets\Scripts\Enemy\GenEnemyAI.cs" />
+    <Compile Include="Assets\Scripts\Enemy\GeneratorHealth.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

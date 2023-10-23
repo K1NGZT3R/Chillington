@@ -8,6 +8,7 @@ TagManager:
   - Stone
   - Wood
   - Metal
+  - Generator
   layers:
   - Default
   - TransparentFX
@@ -23,7 +24,7 @@ TagManager:
   - Wood
   - Metal
   - CarBattery
-  - Core
+  - Generator
   - 
   - 
   - 

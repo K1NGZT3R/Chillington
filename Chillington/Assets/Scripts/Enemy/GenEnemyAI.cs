@@ -1,19 +1,26 @@
 
+using System.Collections.Generic;
 using TMPro.Examples;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
 using UnityEngine.UIElements;
+using static InteractableComp;
+using static UnityEngine.GraphicsBuffer;
+using static WaveSpawner;
 
-public class EnemyAI : MonoBehaviour
+public class GenEnemyAI : MonoBehaviour
 {
+    public List<TeleLocations> teleLocations = new();
+
     public NavMeshAgent agent;
 
     public GameObject zombs;
 
-    public Transform player;
+    public Transform generator;
+    public Transform balls;
 
-    public LayerMask whatIsGround, whatIsPlayer;
+    public LayerMask whatIsGround, whatIsGenerator;
 
     public int health = 10;
 
@@ -32,7 +39,7 @@ public class EnemyAI : MonoBehaviour
 
     //States
     public float sightRange = 214748364;
-    public float attackRange = 1;
+    public float attackRange = 0.25f;
     public bool playerInSightRange, playerInAttackRange;
 
     public GameObject shootScript;
@@ -40,7 +47,6 @@ public class EnemyAI : MonoBehaviour
 
     private void Start()
     {
-        player = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
         shoot = shootScript.GetComponent<Shoot>();
     }
@@ -48,8 +54,8 @@ public class EnemyAI : MonoBehaviour
     private void Update()
     {
         //Check for sight and attack range
-        playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
-        playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
+        playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsGenerator);
+        playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsGenerator);
 
         if (!playerInSightRange && !playerInAttackRange) Patroling();
         if (playerInSightRange && !playerInAttackRange) ChasePlayer();
@@ -94,7 +100,7 @@ public class EnemyAI : MonoBehaviour
 
     public void ChasePlayer()
     {
-        agent.SetDestination(player.position);
+        agent.SetDestination(generator.position);
         Debug.Log("Enemy: Chasing");
     }
 
@@ -103,8 +109,7 @@ public class EnemyAI : MonoBehaviour
     {
         //Make sure enemy doesn't move
         agent.SetDestination(transform.position);
-
-        transform.LookAt(player);
+        transform.LookAt(generator);
 
         if (!alreadyAttacked)
         {
@@ -117,6 +122,9 @@ public class EnemyAI : MonoBehaviour
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
         }
         Debug.Log("Enemy: Attacking");
+        balls = teleLocations[Random.Range(0, teleLocations.Count)].TeleTransform;
+        zombs.transform.position = balls.position;
+
     }
     private void ResetAttack()
     {
@@ -141,4 +149,10 @@ public class EnemyAI : MonoBehaviour
         Destroy(gameObject);
     }
 
+
+    [System.Serializable]
+    public class TeleLocations
+    {
+        public Transform TeleTransform;
+    }
 }

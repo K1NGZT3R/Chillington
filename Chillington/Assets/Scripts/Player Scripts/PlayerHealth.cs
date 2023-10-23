@@ -39,7 +39,10 @@ public class PlayerHealth : MonoBehaviour
         {
             deathScreen.SetActive(true);
             deathTexts.text = "Waves: " + waveCycleManager.cycleCount;
+            waveCycleManager.timeOfDay = 12f;
             Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+
 
             //SceneManager.LoadScene(sceneBuildIndex: 0);
         }
