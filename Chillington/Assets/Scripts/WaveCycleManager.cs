@@ -9,7 +9,7 @@ public class WaveCycleManager : MonoBehaviour
     public GameObject spawnerObj;
 
     [Header("-SET THESE-")]
-    public int waveIncrease =1;
+    public int waveIncrease = 1;
     public int durationIncrease = 30;
     public int durationDecrease = 5;
     public float timeSpeedSlowdown = 5f;
