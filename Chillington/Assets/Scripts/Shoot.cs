@@ -19,6 +19,7 @@ public class Shoot : MonoBehaviour
     public float killScreen = 0f;
     public GameObject killCred;
 
+
     Camera mainCam;
 
     void Awake()
@@ -70,10 +71,17 @@ public class Shoot : MonoBehaviour
 
                 // Get the Enemy component
                 EnemyAI enemyAI = hit.collider.gameObject.GetComponent<EnemyAI>();
+                if (enemyAI != null)
+                {
+                    enemyAI.TakeDamage(damageAmount);
+                }
 
-                hitTime = 0.15f;
-                // Call the TakeDamage method to decrease the enemy's health
-                enemyAI.TakeDamage(damageAmount);
+                GenEnemyAI genEnemyAI = hit.collider.gameObject.GetComponent<GenEnemyAI>();
+                if (genEnemyAI != null)
+                {
+                    genEnemyAI.TakeDamage(damageAmount);
+                }
+
             }
         }
     }
